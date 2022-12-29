@@ -111,7 +111,7 @@ You can either include the filters in the app or have users download them from t
 ## Export video quality params
 Video Editor SDK classifies every device by its performance capabilities and uses the most suitable quality params for the exported video.
 
-Nevertheless it is possible to customize it with `ExportParamsProvider` interface. Just put a required video quality into `ExportManager.Params.Builder` constructor. Check out an [**example**](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/videoeditor/export/IntegrationAppExportParamsProvider.kt), where multiple video files are exported: the first and the second with the most suitable quality params (defined by `sizeProvider.provideOptimalExportVideoSize()` method) and the third with 360p quality (defined by using an Video Editor SDK constant `VideoResolution.VGA360`).
+Nevertheless it is possible to customize it with `ExportParamsProvider` interface. Just put a required video quality into `ExportManager.Params.Builder` constructor. Check out an [**example**](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/videoeditor/export/IntegrationAppExportParamsProvider.kt), where multiple video files are exported: the first and the second with the most suitable quality params (defined by `sizeProvider.provideOptimalExportVideoSize()` method) and the third with 360p quality (defined by using an Video Editor SDK constant `VideoResolution.VGA360`).
 
 See the **default bitrate (kb/s)** for exported video (without audio) in the table below:
 | 360p(360 x 640) | 480p(480 x 854) | HD(720 x 1280) | FHD(1080 x 1920) |
@@ -173,7 +173,7 @@ android.bundle.enableUncompressedNativeLibs=false
 GitHub packages are used to download the latest Video Editor SDK modules. You will also need them to receive new AI Video Editor SDK versions.
 GitHub packages are set up for trial.
 
-**Note**: pay attention that for getting access and downloading the Video Editor SDK modules you need to use the credentials(**banubaRepoUser** and **banubaRepoPassword**), see the [build.gradle](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/build.gradle#L20) for more details.
+**Note**: pay attention that for getting access and downloading the Video Editor SDK modules you need to use the credentials(**banubaRepoUser** and **banubaRepoPassword**), see the [build.gradle](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/build.gradle#L20) for more details.
 
 ```groovy
 ...
@@ -261,7 +261,7 @@ class VideoEditorKoinModule : FlowEditorModule() {
 ```  
 You will need to override several properties to customize the video editor for your application. Please, take a look at the [full example](app/src/main/java/com/banuba/example/integrationapp/videoeditor/di/IntegrationKoinModule.kt).
 
-Once you’ve overridden the properties that you need, initialize the Koin module in your [Application.onCreate](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationKotlinApp.kt#L16) method.
+Once you’ve overridden the properties that you need, initialize the Koin module in your [Application.onCreate](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationKotlinApp.kt#L16) method.
 ``` kotlin
 startKoin {
     androidContext(this@IntegrationApp)        
@@ -277,7 +277,7 @@ You can use Java in your Android project. In this case you can start Koin in thi
             return null;
         });
 ```
-Please, find the [full example](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationJavaApp.java#L22) of Java Application class.
+Please, find the [full example](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationJavaApp.java#L22) of Java Application class.
 
 ### Step 5: Override config classes (Optional)
 There are several classes in the Video Editor SDK that allow you to modify its parameters and behavior:
@@ -370,7 +370,7 @@ class CustomMaskOrderProvider : OrderProvider {
 }
 ```
 This will return the list of masks with the required order.
-Note: The name of mask is a name of an appropriate directory located in **assets/bnb-resources/effects** directory or received from AR cloud. [Example](https://github.com/Banuba/ve-sdk-android-integration-sample/tree/main/app/src/main/assets/bnb-resources/effects/Background).
+Note: The name of mask is a name of an appropriate directory located in **assets/bnb-resources/effects** directory or received from AR cloud. [Example](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/tree/main/app/src/main/assets/bnb-resources/effects/Background).
 
 ```kotlin
 class CustomColorFilterOrderProvider : OrderProvider {
@@ -378,9 +378,9 @@ class CustomColorFilterOrderProvider : OrderProvider {
 }
 ```
 This will return the list of color filters with the required order.
-Note: The name of color filter is a name of an appropriate file located in **assets/bnb-resources/luts** directory. [Example](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/assets/bnb-resources/luts/egypt.png).
+Note: The name of color filter is a name of an appropriate file located in **assets/bnb-resources/luts** directory. [Example](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/app/src/main/assets/bnb-resources/luts/egypt.png).
 
-The final step is to pass your custom ```CustomMaskOrderProvider``` and ```CustomColorFilterOrderProvider``` implementation in the [DI](https://github.com/Banuba/ve-sdk-android-integration-sample#configure-di) to override the default implementations:
+The final step is to pass your custom ```CustomMaskOrderProvider``` and ```CustomColorFilterOrderProvider``` implementation in the [DI](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample#configure-di) to override the default implementations:
 
 ```kotlin
 override val maskOrderProvider: BeanDefinition<OrderProvider> =
@@ -450,11 +450,11 @@ If you want to use the **default record button** provided by the Video Editor SD
 
 If you want to fully change the look of the button and the animation on tap, you should provide your **custom record button** implementation. This is how it’s done:
 
-1. Create a [custom view](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/d5f0b5de02a55866a4dbd35ebb4243a36ca87585/app/src/main/java/com/banuba/example/integrationapp/videoeditor/widget/recordbutton/RecordButtonView.kt).
+1. Create a [custom view](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/d5f0b5de02a55866a4dbd35ebb4243a36ca87585/app/src/main/java/com/banuba/example/integrationapp/videoeditor/widget/recordbutton/RecordButtonView.kt).
 
-2. Implement ```CameraRecordingAnimationProvider``` interface. Here the view created in step 1 should be provided through method ```provideView()``` within this interface. [Example](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/d5f0b5de02a55866a4dbd35ebb4243a36ca87585/app/src/main/java/com/banuba/example/integrationapp/videoeditor/impl/IntegrationAppRecordingAnimationProvider.kt).
+2. Implement ```CameraRecordingAnimationProvider``` interface. Here the view created in step 1 should be provided through method ```provideView()``` within this interface. [Example](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/d5f0b5de02a55866a4dbd35ebb4243a36ca87585/app/src/main/java/com/banuba/example/integrationapp/videoeditor/impl/IntegrationAppRecordingAnimationProvider.kt).
 
-3. Implement ```CameraRecordingAnimationProvider``` in the [DI](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/d5f0b5de02a55866a4dbd35ebb4243a36ca87585/app/src/main/java/com/banuba/example/integrationapp/videoeditor/di/VideoEditorKoinModule.kt#L81).
+3. Implement ```CameraRecordingAnimationProvider``` in the [DI](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/d5f0b5de02a55866a4dbd35ebb4243a36ca87585/app/src/main/java/com/banuba/example/integrationapp/videoeditor/di/VideoEditorKoinModule.kt#L81).
 
 ### Configure camera timer
 
@@ -532,7 +532,7 @@ VideoEditorUtils.isSupportsVideoEditor
 
 ### Localization
 
-To change any particular text in the Video Editor SDK just provide your custom value for string resource provided in String resources section of [every screen](#Configure-screens) (check out an example of [string resources](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/editor_styles.md#string-resources) on editor screen). Keep ResourceId the same and change only related value.
+To change any particular text in the Video Editor SDK just provide your custom value for string resource provided in String resources section of [every screen](#Configure-screens) (check out an example of [string resources](https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/mddocs/editor_styles.md#string-resources) on editor screen). Keep ResourceId the same and change only related value.
 
 To localize Video Editor SDK follow an [official guilde](https://developer.android.com/guide/topics/resources/localization) and provide string resources for every locale in your app with the same ResourceId and translated values.
 
