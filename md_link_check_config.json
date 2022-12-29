@@ -28,10 +28,10 @@
       "pattern": "https://developer.android.com/guide/components/activities/intro-activities"
     },
     {
-      "pattern": "https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationKotlinApp.kt"
+      "pattern": "https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationKotlinApp.kt"
     },
     {
-      "pattern": "https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationJavaApp.java"
+      "pattern": "https://github.com/Banuba-Examples/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/IntegrationJavaApp.java"
     },
     {
       "pattern": "https://developer.android.com/reference/android/app/Activity"

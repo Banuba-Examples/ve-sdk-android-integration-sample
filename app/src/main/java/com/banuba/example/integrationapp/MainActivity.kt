@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         private const val TOKEN_URL =
-            "https://github.com/Banuba/ve-sdk-android-integration-sample#token"
+            "https://github.com/Banuba-Examples/ve-sdk-android-integration-sample#token"
 
         /**
          * Place here Facebook app id which is used to share exported video
